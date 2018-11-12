@@ -1,0 +1,188 @@
+{
+  "ISA": {
+    "node": "interchangeControl",
+    "parent": "header",
+    "elements": [
+      "authInfoQual",
+      "authInfo",
+      "securityInfoQual",
+      "securityInfo",
+      "senderIdQual",
+      "senderId",
+      "receiverIdQual",
+      "receiverId",
+      "date",
+      "time",
+      "repetitionSeparator",
+      "controlVersionNumber",
+      "controlNumber",
+      "acknowledgmentRequested",
+      "usageIndicator"
+    ],
+    "qualifiers": {
+      "id": {
+        "ZZ": "mutuallyDefined"
+      }
+    }
+  },
+  "GS": {
+    "node": "functionalGroup",
+    "parent": "header",
+    "elements": [
+      "functionalIdentifierCode",
+      "senderCode",
+      "receiverCode",
+      "date",
+      "time",
+      "controlNumber",
+      "responsibleAgencyCode",
+      "versionCode"
+    ]
+  },
+  "ST": {
+    "node": "transactionSet",
+    "parent": "header",
+    "elements": [
+      "code",
+      "controlNumber"
+    ]
+  },
+  "BEG": {
+    "node": "orderDetail",
+    "parent": null,
+    "elements": [
+      "purposeCode",
+      "typeCode",
+      "poNumber",
+      "releaseNumber",
+      "date"
+    ]
+  },
+  "REF": {
+    "node": "referenceIdentification",
+    "parent": "orderDetail",
+    "elements": [
+      "refIdQual",
+      "refId"
+    ],
+    "qualifiers": {
+      "referenceId": {
+        "CO": "customerOrderNumber",
+        "IA": "internalVendorNumber",
+        "ST": "storeNumber",
+        "1W": "memberIdentificationNumber",
+        "IL": "internalOrderNumber",
+        "IT": "internalCustomerNumber",
+        "PQ": "payeeIdentification",
+        "CR": "customerReferenceNumber"
+      }
+    }
+  },
+  "CSH": {
+    "node": "salesRequirements",
+    "parent": "orderDetail",
+    "elements": [
+      "backOrder"
+    ]
+  },
+  "DTM": {
+    "type": "multi",
+    "node": "dateTimeReference",
+    "parent": "orderDetail",
+    "elements": [
+      "dateQual",
+      "date"
+    ],
+    "qualifiers": {
+      "dateTime": {
+        "063": "doNotDeliverAfter",
+        "064": "doNotDeliverBefore"
+      }
+    }
+  },
+  "N1": {
+    "node": "main",
+    "parent": "names",
+    "type": "multi",
+    "elements": [
+      "entityIdCode",
+      "node",
+      "idCodeQual",
+      "idCode"
+    ],
+    "qualifiers": {
+      "types": {
+        "BS": "billToAndShipTo",
+        "BT": "billTo",
+        "ST": "shipTo",
+        "BY": "buyingParty",
+        "SE": "sellingParty",
+        "EN": "endUser"
+      },
+      "values": {
+        "15": "standardAddressNumber",
+        "92": "buyerDefined",
+        "ZZ": "mutuallyDefined"
+      }
+    }
+  },
+  "N2": {
+    "node": "additional",
+    "parent": "names",
+    "elements": [
+      "node1",
+      "node2"
+    ]
+  },
+  "N3": {
+    "node": "street",
+    "parent": "address",
+    "elements": [
+      "address1",
+      "address2"
+    ]
+  },
+  "N4": {
+    "node": "location",
+    "parent": "address",
+    "elements": [
+      "city",
+      "state",
+      "zip",
+      "country"
+    ]
+  },
+  "PO1": {
+    "type": "multi",
+    "node": "items",
+    "parent": null,
+    "elements": [
+      "id",
+      "quantity",
+      "unitOfMeasure",
+      "price",
+      "unitPriceCode",
+      "productIdQualifier",
+      "productId"
+    ],
+    "qualifiers": {
+      "units": {
+        "CA": "case",
+        "EA": "each",
+        "PE": "pounds",
+        "UN": "unit"
+      },
+      "unitPriceCode": {
+        "PE": "each"
+      }
+    }
+  },
+  "CTT": {
+    "node": "totals",
+    "parent": "orderDetail",
+    "elements": [
+      "totalItems",
+      "totalQuantity"
+    ]
+  }
+}
