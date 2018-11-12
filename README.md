@@ -1,4 +1,4 @@
-test
+x12 EDI Parser
 ====
 
-Test
+Parses EDI x12 format messages into a JSON object. Uses an optional map file to control the format of the resulting object.
